@@ -48,5 +48,6 @@ build/
 /Eclipse-EE
 /IntelliJ
 /Tomcat
+/Servers
 .eclipse.lnk
 .intelliJ.lnk
