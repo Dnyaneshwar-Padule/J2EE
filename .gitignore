@@ -43,6 +43,9 @@ build/
 /.metadata
 .metadata/
 
+*.exe
+*.lnk
+
 #Eclipse and IntelliJ IDE
 /Eclipse
 /Eclipse-EE
