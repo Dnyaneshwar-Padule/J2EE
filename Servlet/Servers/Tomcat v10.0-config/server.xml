@@ -134,7 +134,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="00-First-Servlet-Application" path="/00-First-Servlet-Application" reloadable="true" source="org.eclipse.jst.jee.server:00-First-Servlet-Application"/><Context docBase="01-Accept-Input-From-User" path="/01-Accept-Input-From-User" reloadable="true" source="org.eclipse.jst.jee.server:01-Accept-Input-From-User"/><Context docBase="02-Addition-Of-Two-Numbers" path="/02-Addition-Of-Two-Numbers" reloadable="true" source="org.eclipse.jst.jee.server:02-Addition-Of-Two-Numbers"/></Host>
+      <Context docBase="00-First-Servlet-Application" path="/00-First-Servlet-Application" reloadable="true" source="org.eclipse.jst.jee.server:00-First-Servlet-Application"/><Context docBase="01-Accept-Input-From-User" path="/01-Accept-Input-From-User" reloadable="true" source="org.eclipse.jst.jee.server:01-Accept-Input-From-User"/><Context docBase="02-Addition-Of-Two-Numbers" path="/02-Addition-Of-Two-Numbers" reloadable="true" source="org.eclipse.jst.jee.server:02-Addition-Of-Two-Numbers"/><Context docBase="Mini-Beer-Advisor" path="/Mini-Beer-Advisor" reloadable="true" source="org.eclipse.jst.jee.server:Mini-Beer-Advisor"/></Host>
     </Engine>
   </Service>
 </Server>
