@@ -50,7 +50,8 @@ build/
 /Eclipse
 /Eclipse-EE
 /IntelliJ
-/Tomcat
+#/Tomcat
+Tomcat/
 .eclipse.lnk
 .intelliJ.lnk
 
