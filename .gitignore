@@ -50,11 +50,11 @@ build/
 /Eclipse
 /Eclipse-EE
 /IntelliJ
-#/Tomcat
+/Tomcat
 Tomcat/
 .eclipse.lnk
 .intelliJ.lnk
 
-/Servers/
-Server/
+#/Servers/
+#Server/
 Servers/
