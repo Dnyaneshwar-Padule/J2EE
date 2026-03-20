@@ -30,7 +30,7 @@
 				<div class="container bg-body-secondary mt-3 pt-4 pb-4">
 					<div class="mb-3">
 				 		<label for="message" class="form-label">Cipher Text</label>
-				 		<textarea class="form-control" name="cipherText" id="cipherText" rows="3"><%= cipherText %></textarea>
+				 		<textarea class="form-control" name="cipherText" id="cipherText" rows="3" disabled readonly><%= cipherText %></textarea>
 					</div>
 				</div>
 			<% } %>
@@ -53,7 +53,7 @@
 					<%
 						for(String result: possibilities){
  					%>
- 						<textarea class="form-control" name="cipherText" id="cipherText" rows="3"><%= result %></textarea>
+ 						<textarea class="form-control" name="cipherText" id="cipherText" rows="3" disabled readonly><%= result %></textarea>
  					<%} %>
  					</div>
  			<% } %>
