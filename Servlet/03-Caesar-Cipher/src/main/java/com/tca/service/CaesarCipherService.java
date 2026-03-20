@@ -1,8 +1,11 @@
 package com.tca.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CaesarCipherService {
 
-	public String convertText(String msg, int shift) {
+	public String convertToCipherText(String msg, int shift) {
 		StringBuilder result = new StringBuilder();
 		shift = shift % 26;
 		
@@ -18,6 +21,14 @@ public class CaesarCipherService {
 		}
 		
 		return result.toString();
+	}
+
+	public List<String> convertToPlainText(String msg){
+		List<String> possibilities = new ArrayList<String>();
+		for(int i = 1; i < 26; i++) {
+			possibilities.add(convertToCipherText(msg, i));
+		}
+		return possibilities;
 	}
 	
 }

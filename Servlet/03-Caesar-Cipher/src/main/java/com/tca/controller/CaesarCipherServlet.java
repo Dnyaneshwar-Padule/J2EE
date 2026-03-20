@@ -18,7 +18,7 @@ public class CaesarCipherServlet extends HttpServlet {
 			CaesarCipherService service = new CaesarCipherService();
 			String message = request.getParameter("message");			
 			int shift = Integer.parseInt( request.getParameter("shift") );
-			String caesarCipherText = service.convertText(message, shift);
+			String caesarCipherText = service.convertToCipherText(message, shift);
 			request.setAttribute("cipherText", caesarCipherText);
 			request.getRequestDispatcher("./").forward(request, response);
 		}

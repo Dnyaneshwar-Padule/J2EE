@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 				 	<label for="message" class="form-label">Message</label>
 				 	<textarea class="form-control" name="message" id="message" rows="3"></textarea>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>			
+				<button type="submit" class="btn btn-primary">Encrypt</button>			
 			</form>
 			
 			<%
@@ -33,8 +34,32 @@
 					</div>
 				</div>
 			<% } %>
-			
  		</div>
+ 		
+ 		<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+ 			<form method="post" action="decryptCaesarCipher">
+ 				<div class="mb-3">
+				 	<label for="message" class="form-label">Cipher Message</label>
+				 	<textarea class="form-control" name="cipherMessage" id="cipherMessage" rows="3"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Decrypt</button>	
+ 			</form>
+ 			
+ 			<%
+ 				ArrayList<String> possibilities = (ArrayList<String>)request.getAttribute("possibilities");
+				if( possibilities != null && ! possibilities.isEmpty()){
+			%>
+						<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+					<%
+						for(String result: possibilities){
+ 					%>
+ 						<textarea class="form-control" name="cipherText" id="cipherText" rows="3"><%= result %></textarea>
+ 					<%} %>
+ 					</div>
+ 			<% } %>
+ 			
+ 		</div>
+ 		
  		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	</body>
 </html>
