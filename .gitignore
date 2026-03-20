@@ -35,6 +35,12 @@ build/
 *.env
 *.properties
 
+*.jpg
+*.jpeg
+*.mp4
+*.pdf
+*.mp3
+
 #JDBC Jars
 /MySql-JDBC-Jar
 /PostgreSQL-JDBC-Jar
