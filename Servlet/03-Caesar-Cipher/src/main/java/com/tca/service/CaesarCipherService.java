@@ -25,8 +25,11 @@ public class CaesarCipherService {
 
 	public List<String> convertToPlainText(String msg){
 		List<String> possibilities = new ArrayList<String>();
+		String plainText;
 		for(int i = 1; i < 26; i++) {
-			possibilities.add(convertToCipherText(msg, i));
+			plainText = convertToCipherText(msg, i);
+			if(plainText != null && ! plainText.isBlank())
+				possibilities.add(plainText);
 		}
 		return possibilities;
 	}
