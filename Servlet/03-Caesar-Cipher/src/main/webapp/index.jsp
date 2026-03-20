@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,11 +11,11 @@
 	</head>
 	<body>
 		<h1 class="ps-5 mt-4">Caesar Cipher</h1>
-		<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+		<div class="container mt-3 pt-4 pb-4">
 			<form action="caesarCipher" method="post">
 	 			<div class="mb-3">
 				 	<label for="shift" class="form-label">Shift (k)</label>
-				 	<input type="number" class="form-control" min="1"  max="25" name="shift" id="shift" placeholder="3">
+				 	<input type="number" class="form-control" min="1"  max="25" name="shift" id="shift" placeholder="ex. 3" required>
 				</div>
 				<div class="mb-3">
 				 	<label for="message" class="form-label">Message</label>
@@ -27,17 +28,23 @@
 				String cipherText = (String)request.getAttribute("cipherText");
 				if(cipherText != null && ! cipherText.isBlank()) {
 			%>
-				<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+				<div class="container mt-3 pt-4 pb-4">
 					<div class="mb-3">
 				 		<label for="message" class="form-label">Cipher Text</label>
 				 		<textarea class="form-control" name="cipherText" id="cipherText" rows="3" disabled readonly><%= cipherText %></textarea>
 					</div>
 				</div>
 			<% } %>
+ 		<hr class="border border-primary border-3 opacity-75">
  		</div>
  		
- 		<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+ 		
+ 		<div class="container  mt-3 mb-4 pt-4 pb-4">
  			<form method="post" action="decryptCaesarCipher">
+ 				<div class="mb-3">
+				 	<label for="shift" class="form-label">Shift (k)</label>
+				 	<input type="number" class="form-control" min="1"  max="25" name="shift" id="shift" placeholder="ex. 3">
+				</div>
  				<div class="mb-3">
 				 	<label for="message" class="form-label">Cipher Message</label>
 				 	<textarea class="form-control" name="cipherMessage" id="cipherMessage" rows="3"></textarea>
@@ -46,14 +53,15 @@
  			</form>
  			
  			<%
- 				ArrayList<String> possibilities = (ArrayList<String>)request.getAttribute("possibilities");
+ 				List<String> possibilities = (List<String>)request.getAttribute("possibilities");
 				if( possibilities != null && ! possibilities.isEmpty()){
 			%>
-						<div class="container bg-body-secondary mt-3 pt-4 pb-4">
+						<div class="container mt-3 pt-4 pb-4">
+						<br>
 					<%
 						for(String result: possibilities){
  					%>
- 						<textarea class="form-control" name="cipherText" id="cipherText" rows="3" disabled readonly><%= result %></textarea>
+ 						<textarea class="form-control mb-1" name="cipherText" id="cipherText"  disabled readonly><%= result %></textarea>
  					<%} %>
  					</div>
  			<% } %>

@@ -20,8 +20,19 @@ public class DecryptCaesarCipherServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			CaesarCipherService caesarCipherService = new CaesarCipherService();
-			String cipherText = request.getParameter("cipherMessage");			
-			List<String> possibilities = caesarCipherService.convertToPlainText(cipherText);
+			String cipherText = request.getParameter("cipherMessage");		
+			int shift;
+			List<String> possibilities = null;
+			try {
+				shift = Integer.parseInt( request.getParameter("shift") );
+				shift %= 26;
+				shift = 26 - shift;
+				String result = caesarCipherService.convertToCipherText(cipherText, shift);
+				possibilities = List.of(result);
+			}
+			catch(Exception e) {	
+				possibilities = caesarCipherService.convertToPlainText(cipherText);				
+			}
 			request.setAttribute("possibilities", possibilities);
 		}
 		catch(Exception e) {
