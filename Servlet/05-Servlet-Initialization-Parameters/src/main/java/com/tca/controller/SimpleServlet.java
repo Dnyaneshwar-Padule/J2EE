@@ -29,6 +29,9 @@ public class SimpleServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 				
+		// Servlet Config is separate for every Servlet
+		// It is created by the container, while initialization of the Servlet
+		// It has initialization parameters (from Deployment Descriptor)
 		ServletConfig config = this.getServletConfig();
 		
 		Enumeration<String> parms = config.getInitParameterNames();

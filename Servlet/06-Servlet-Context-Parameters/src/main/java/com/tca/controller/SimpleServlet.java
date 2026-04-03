@@ -18,6 +18,9 @@ public class SimpleServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
+		
+		// ServletContext is created only once per web app
+		// It is created by the container, with initialization of context parameters 
 		ServletContext context  = getServletContext();
 		Enumeration<String> parms = context.getInitParameterNames();
 		PrintWriter out = response.getWriter();
