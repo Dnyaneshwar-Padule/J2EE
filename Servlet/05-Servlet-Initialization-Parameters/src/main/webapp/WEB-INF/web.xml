@@ -10,8 +10,16 @@
   	<servlet-class>com.tca.controller.SimpleServlet</servlet-class>
   
   	<init-param>
-  		<param-name>servletName</param-name>
+  		<param-name>servlet-name</param-name>
   		<param-value>___simpleeeee____servlettt__</param-value>
+  	</init-param> 
+  	  	<init-param>
+  		<param-name>servlet-class</param-name>
+  		<param-value>com.tca.controller.SimpleServlet</param-value>
+  	</init-param> 
+  	 <init-param>
+  		<param-name>http-method</param-name>
+  		<param-value>get</param-value>
   	</init-param> 
   </servlet>
   
