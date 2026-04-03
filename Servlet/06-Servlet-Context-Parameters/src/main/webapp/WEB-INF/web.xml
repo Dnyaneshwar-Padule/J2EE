@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>06-Servlet-Context-Parameters</display-name>
+  <welcome-file-list>
+    <welcome-file>get</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<param-name>msg</param-name>
+  	<param-value>_Hey__Bouy__!!!_</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>country</param-name>
+  	<param-value>India</param-value>
+  </context-param>  
+  <context-param>
+  	<param-name>hobby</param-name>
+  	<param-value>reading_coding_swimming___yeah_I_have_these_hobbies</param-value>
+  </context-param>
+  
+</web-app>
