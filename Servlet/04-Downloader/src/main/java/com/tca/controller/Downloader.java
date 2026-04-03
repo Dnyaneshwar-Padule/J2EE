@@ -20,7 +20,10 @@ public class Downloader extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+		// The file use wants to download
         String option = request.getParameter("option");
+        
+        
         ServletContext context = getServletContext();
 
         String filePath = null;
@@ -39,10 +42,12 @@ public class Downloader extends HttpServlet {
             return;
         }
 
+        // Input stream to read the resource
         InputStream in = context.getResourceAsStream(filePath);
 
+        // maybe the resource does not exists there !
         if (in == null) {
-        	System.out.println("Input Stream is null !");
+        	// System.out.println("Input Stream is null !");  // Just for simple logging
         	request.getRequestDispatcher("index.jsp").forward(request, response);
         	return;
         }
