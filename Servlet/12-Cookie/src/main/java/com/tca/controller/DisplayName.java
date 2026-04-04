@@ -20,6 +20,8 @@ public class DisplayName extends HttpServlet {
 		boolean cookieFound = false;
 		String name = null;
 		Cookie[] cookies = request.getCookies();
+		
+		if(cookies != null)
 		for(int i = 0; i < cookies.length; ++i) {
 			Cookie c = cookies[i];
 			
@@ -33,7 +35,7 @@ public class DisplayName extends HttpServlet {
 			displayName(response, name);
 		}
 		else {
-			request.getRequestDispatcher("/form.jps").forward(request, response);			
+			request.getRequestDispatcher("form.jsp").forward(request, response);			
 		}
 	}
 
@@ -47,7 +49,7 @@ public class DisplayName extends HttpServlet {
 			displayName(response, name);
 		}
 		else {
-			request.getRequestDispatcher("/form.jsp").forward(request, response);
+			request.getRequestDispatcher("form.jsp").forward(request, response);
 		}
 	}
 	
@@ -57,5 +59,4 @@ public class DisplayName extends HttpServlet {
 		out.print("Hello " + name + ", nice to meet you again !");
 		out.close();
 	}
-
 }
