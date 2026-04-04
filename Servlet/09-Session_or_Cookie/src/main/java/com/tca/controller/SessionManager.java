@@ -33,7 +33,6 @@ public class SessionManager extends HttpServlet {
 			i = 1;
 		}
 		
-		
 		if(session != null && i != null) {
 			out.println("Hey ! what's up ! I remember you !<br>");
 			out.print("You have made " + i.intValue() + " requests !");
@@ -53,8 +52,7 @@ public class SessionManager extends HttpServlet {
 			}
 		}
 		
-		
-		
+	
 	}
 
 }
