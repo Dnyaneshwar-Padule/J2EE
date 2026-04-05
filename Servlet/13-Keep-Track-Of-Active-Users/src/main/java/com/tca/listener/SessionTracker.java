@@ -8,6 +8,14 @@ import jakarta.servlet.http.HttpSessionListener;
  * Application Lifecycle Listener implementation class SessionTracker
  *
  */
+
+/*
+ listener>
+ 	<listener-class>
+ 		com.example.BeerSessionCounter
+ 	</listener-class>
+ </listener>
+  */
 @WebListener
 public class SessionTracker implements HttpSessionListener {
 	
