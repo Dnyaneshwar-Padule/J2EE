@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpSessionListener;
  */
 
 /*
- listener>
+ <listener>
  	<listener-class>
  		com.example.BeerSessionCounter
  	</listener-class>
