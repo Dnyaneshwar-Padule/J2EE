@@ -52,8 +52,12 @@ public class GreetingServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(false);
 		
-		if(session == null)
+		if(session == null) {
+			System.out.println("creating new session");
 			session = request.getSession(true);
+		}
+		
+		System.out.println(session.isNew());
 		
 		session.setAttribute("user", user);
 		displayInfo(request, response);
@@ -75,5 +79,4 @@ public class GreetingServlet extends HttpServlet {
 			out.close();
 		}
 	}
-
 }

@@ -41,7 +41,7 @@ public class User implements Serializable, HttpSessionBindingListener, HttpSessi
 	
 	@Override
 	public void valueBound(HttpSessionBindingEvent event) {
-		System.out.println("I am added to the session, time to load data from the disk.");
+		System.out.println("I am added to the session:" + event.getSession().getId()  +  ", time to load data from the disk.");
 	} 
 	
 	@Override
